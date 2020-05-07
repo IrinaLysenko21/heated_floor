@@ -5,3 +5,7 @@ export interface IProduct {
   price: number;
   currency: string;
 }
+
+export interface IStore {
+  products: IProduct[];
+}

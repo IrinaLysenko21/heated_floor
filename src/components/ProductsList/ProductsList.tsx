@@ -1,14 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
-import { IProduct } from '../../utils/interfaces';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { IStore } from '../../interfaces';
+import { fetchProducts } from '../../redux/products/productsActions';
 import styles from './ProductsList.module.css';
 
-type ProductsListProps = {
-  products: IProduct[];
-};
+const ProductsList: React.FC = () => {
+  const products = useSelector((state: IStore) => state.products);
+  const dispatch = useDispatch();
 
-const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   return (
     <ul>
       {products.map(product => (
