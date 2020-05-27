@@ -1,13 +1,26 @@
-import React from 'react';
-import ProductsList from '../../components/ProductsList/ProductsList';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import CategoriesList from '../../components/CategoriesList/CategoriesList';
+import { getCategories } from '../../redux/categories/categoriesActions';
+import { categoriesSelector } from '../../redux/categories/categoriesSelectors';
+import { CategoryType } from '../../redux/categories/categoriesTypes';
+import styles from './CataloguePage.module.css';
 
-const Catalogue: React.FC = () => {
+const CataloguePage = (): JSX.Element => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
+
+  const categories: CategoryType[] | [] = useSelector(categoriesSelector);
+
   return (
     <div>
       <h1>Catalogue</h1>
-      <ProductsList />
+      {categories.length > 0 && <CategoriesList categories={categories} />}
     </div>
   );
 };
 
-export default Catalogue;
+export default CataloguePage;

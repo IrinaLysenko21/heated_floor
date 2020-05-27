@@ -1,10 +1,11 @@
-import { FETCH_PRODUCTS, IFetchProductsAction } from './productsTypes';
+import {
+  GET_PRODUCTS_SUCCESS,
+  GetProductsSuccessActionType,
+} from './productsTypes';
 
-// const initialState: [] = [];
-
-const productsReducer = (state = [], action: IFetchProductsAction) => {
+const productsReducer = (state = [], action: GetProductsSuccessActionType) => {
   switch (action.type) {
-    case FETCH_PRODUCTS:
+    case GET_PRODUCTS_SUCCESS:
       return action.payload.products;
 
     default:

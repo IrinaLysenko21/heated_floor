@@ -1,11 +1,31 @@
-import { IProduct } from '../../interfaces';
+export const GET_PRODUCTS = 'products/GET_PRODUCTS';
+export const GET_PRODUCTS_START = 'products/GET_PRODUCTS_START';
+export const GET_PRODUCTS_SUCCESS = 'products/GET_PRODUCTS_SUCCESS';
+export const GET_PRODUCTS_ERROR = 'products/GET_PRODUCTS_ERROR';
 
-export const REQUEST_PRODUCTS = 'products/REQUEST_PRODUCTS';
-export const FETCH_PRODUCTS = 'products/FETCH_PRODUCTS';
+export interface ProductType {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  currency: string;
+}
 
-export interface IFetchProductsAction {
-  type: typeof FETCH_PRODUCTS;
+export interface getProductsActionType {
+  type: typeof GET_PRODUCTS;
+}
+
+export interface GetProductsStartActionType {
+  type: typeof GET_PRODUCTS_START;
+}
+
+export interface GetProductsSuccessActionType {
+  type: typeof GET_PRODUCTS_SUCCESS;
   payload: {
-    products: IProduct[];
+    products: ProductType[] | [];
   };
+}
+
+export interface GetProductsErrorActionType {
+  type: typeof GET_PRODUCTS_ERROR;
 }

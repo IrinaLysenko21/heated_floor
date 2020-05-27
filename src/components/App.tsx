@@ -10,10 +10,6 @@ const App: React.FC = () => {
       <Switch>
         <Route
           exact
-          path={routes.HOME_PAGE.path}
-          component={routes.HOME_PAGE.component}
-        />
-        <Route
           path={routes.CATALOGUE_PAGE.path}
           component={routes.CATALOGUE_PAGE.component}
         />
@@ -33,7 +29,7 @@ const App: React.FC = () => {
           path={routes.CART_PAGE.path}
           component={routes.CART_PAGE.component}
         />
-        <Redirect to={routes.HOME_PAGE.path} />
+        <Redirect to={routes.CATALOGUE_PAGE.path} />
       </Switch>
     </div>
   );

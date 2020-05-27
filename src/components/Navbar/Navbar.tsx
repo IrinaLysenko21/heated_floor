@@ -23,28 +23,19 @@ const StyledBadge = withStyles((theme: Theme) =>
 
 const Navbar: React.FC = () => (
   <nav className={styles.container}>
-    <Link to={routes.HOME_PAGE.path} className={styles.logo_link}>
+    <Link to={routes.CATALOGUE_PAGE.path} className={styles.logo_link}>
       <h1 className={styles.logo}>Logo</h1>
     </Link>
     <div className={styles.navWrapper}>
       <ul className={styles.navList}>
         <li>
           <NavLink
-            to={routes.HOME_PAGE.path}
             exact
-            activeStyle={activeStyle}
-            className={styles.navList_item}
-          >
-            Главная
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to={routes.CATALOGUE_PAGE.path}
             activeStyle={activeStyle}
             className={styles.navList_item}
           >
-            Каталог
+            Продукция
           </NavLink>
         </li>
         <li>

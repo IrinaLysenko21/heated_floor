@@ -1,4 +1,5 @@
-import { IStore } from '../../interfaces';
-import { IProduct } from '../../interfaces';
+import { StoreType } from '../storeType';
+import { ProductType } from './productsTypes';
 
-export const products = (store: IStore): IProduct[] | [] => store.products;
+export const productsSelector = (store: StoreType): ProductType[] | [] =>
+  store.products;

@@ -6,12 +6,8 @@ import ArticlesPage from '../pages/ArticlesPage/ArticlesPage';
 import CartPage from '../pages/CartPage/CartPage';
 
 export default {
-  HOME_PAGE: {
-    path: '/',
-    component: HomePage,
-  },
   CATALOGUE_PAGE: {
-    path: '/catalogue',
+    path: '/',
     component: CataloguePage,
   },
   TERMS_PAGE: {
