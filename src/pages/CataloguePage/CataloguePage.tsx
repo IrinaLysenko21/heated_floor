@@ -6,7 +6,7 @@ import { categoriesSelector } from '../../redux/categories/categoriesSelectors';
 import { CategoryType } from '../../redux/categories/categoriesTypes';
 import styles from './CataloguePage.module.css';
 
-const CataloguePage = (): JSX.Element => {
+const CataloguePage: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
 
   useEffect(() => {
