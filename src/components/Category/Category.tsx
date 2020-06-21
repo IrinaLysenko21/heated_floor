@@ -1,11 +1,11 @@
 import React from 'react';
 import { CategoryType } from '../../redux/categories/categoriesTypes';
 
-type CategoryFolderPropsType = {
+type CategoryPropsType = {
   category: CategoryType;
 };
 
-const CategoryFolder = ({ category }: CategoryFolderPropsType): JSX.Element => {
+const Category = ({ category }: CategoryPropsType): JSX.Element => {
   return (
     <div>
       <h1>{category.name}</h1>
@@ -14,4 +14,4 @@ const CategoryFolder = ({ category }: CategoryFolderPropsType): JSX.Element => {
   );
 };
 
-export default CategoryFolder;
+export default Category;

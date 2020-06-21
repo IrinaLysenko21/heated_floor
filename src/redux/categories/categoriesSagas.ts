@@ -11,6 +11,7 @@ function* categoriesSagaWorker() {
   try {
     yield put(getCategoriesStart());
     const payload = yield call(API.getCategories);
+
     yield put(getCategoriesSuccess(payload));
   } catch (err) {
     yield put(getCategoriesError());

@@ -14,6 +14,10 @@ const App: React.FC = () => {
           component={routes.CATALOGUE_PAGE.component}
         />
         <Route
+          path={routes.CATEGORY_PAGE.path}
+          component={routes.CATEGORY_PAGE.component}
+        />
+        <Route
           path={routes.TERMS_PAGE.path}
           component={routes.TERMS_PAGE.component}
         />

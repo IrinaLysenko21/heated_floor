@@ -6,6 +6,7 @@ export const GET_CATEGORIES_ERROR = 'categories/GET_CATEGORIES_ERROR';
 export interface CategoryType {
   id: string;
   name: string;
+  slug: string;
   imgURL: string;
 }
 

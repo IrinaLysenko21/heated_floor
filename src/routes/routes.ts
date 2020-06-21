@@ -1,5 +1,5 @@
-import HomePage from '../pages/HomePage/HomePage';
 import CataloguePage from '../pages/CataloguePage/CataloguePage';
+import CategoryPage from '../pages/CategoryPage/CategoryPage';
 import TermsPage from '../pages/TermsPage/TermsPage';
 import ContactsPage from '../pages/ContactsPage/ContactsPage';
 import ArticlesPage from '../pages/ArticlesPage/ArticlesPage';
@@ -9,6 +9,10 @@ export default {
   CATALOGUE_PAGE: {
     path: '/',
     component: CataloguePage,
+  },
+  CATEGORY_PAGE: {
+    path: '/catalogue/:categoryName',
+    component: CategoryPage,
   },
   TERMS_PAGE: {
     path: '/terms',
