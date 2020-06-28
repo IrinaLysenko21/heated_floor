@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import routes from '../routes/routes';
-import Navbar from './Navbar/Navbar';
+import Header from './Header/Header';
 
 const App: React.FC = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Switch>
         <Route
           exact

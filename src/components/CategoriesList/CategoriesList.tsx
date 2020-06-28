@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
-import Category from '../Category/Category';
 import { CategoryType } from '../../redux/categories/categoriesTypes';
+import styles from './CategoriesList.module.css';
 
 type CategoriesListPropTypes = {
   categories: CategoryType[];
@@ -14,12 +14,22 @@ const CategoriesList = ({
   const match = useRouteMatch();
 
   return (
-    <ul>
+    <ul className={styles.categoriesList}>
       {categories.map(category => {
         return (
-          <li key={category.id}>
-            <Link to={`${match.url}catalogue/${category.slug}`}>
-              <Category category={category} />
+          <li className={styles.categoriesListItem} key={category.id}>
+            <Link
+              className={styles.categoryLink}
+              to={`${match.url}catalogue/${category.slug}`}
+            >
+              <div className={styles.categoryWrapper}>
+                <img
+                  className={styles.categoryImg}
+                  src={category.imgURL}
+                  alt={category.name}
+                />
+                <h3 className={styles.categoryName}>{category.name}</h3>
+              </div>
             </Link>
           </li>
         );
